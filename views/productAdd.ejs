@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<!-- Include Head -->
+
+<head>
+	<%- include('./partials/head') %>  
+</head>
+<body>
+	<!-- Header -->
+<%- include('./partials/headerLogueado') %> 
+	<!-- /Header -->
+
+	<!-- Novedades -->
+			<div class="container products-wrapper">
+				<div class="row">
+					<div class="col-12">
+						<h2 class="products-title">Agregá el producto que desees </h2>
+					</div>
+					
+						<form class="font-impact-white" action="/profile" method="GET">
+		
+							<p>
+							<label for="nombre"> Nombre del producto: </label>
+							<input type="text" name="nombre" id="nombre">
+							</p>
+		
+							<p>
+							<label for="imagen"> Imagen: </label>
+							<input type="file" name="imagen" id="imagen">
+							</p>
+							<p>
+								<label for="precio"> Precio : $</label>
+								<input type="number" name="precio" id="precio">
+							</p>
+							<p>
+							<label for="descripción"> Descripcion: </label>
+							<input type="text" name="descripción" id="descripción">
+							</p>
+		
+							<p>
+								<button class="button-orange" type="submit" value="Enviar"> Agregar producto </button>
+							</p>
+			
+			
+						</form>
+		
+				</div>	
+			</div>	
+	<%- include('./partials/footer')  %> 
+</body>
+
+</html>

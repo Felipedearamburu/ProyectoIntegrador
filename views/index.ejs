@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include('./partials/head') %>  
+  </head>
+  <%- include('./partials/header') %>
+  <!-- Banner -->
+	<div class="banner-auto" >
+		<img src="images/baner.png" style= "max-height:min-content;" alt="Banner de ofertas">
+	</div>
+	<!-- /Banner -->
+  <body>
+    <h1 class= "nuestros-productos" style="text-align: center;"><%= title %></h1>
+  
+	<div class="container products-wrapper">
+      	<div class="row">
+          <% for (let i=0; i<autos.length; i ++){ %>
+			    <div class="col-12 col-sm-6 col-lg-3">
+				  <section class="product-box">
+					<a href="/detail/<%=autos[i].id %>">
+						<figure class="product-box_image">
+							<img src="./autosImg/<%= autos[i].imagen %> " alt="cafetera moulinex">
+						</figure>
+						<article class="product-box_data">
+							<h2><%= autos[i].nombre %></h2>
+							<p>Precio : $ <%= autos[i].precio %></p>
+							<p>Comentarios: 5</p>
+              <a href="/detail/<%=autos[i].id %>" class= "btn btn-primary">Ver detalles</a>
+						</article>
+					</a>
+				</section>
+			</div>
+			<% } %>
+    	</div>
+ 	</div>
+  <p class= "nuestros-productos" style="text-align: center;">Fin de catalogo de <%= title %></p>
+  </body>
+
+  <%- include('./partials/footer') %>
+</html>
