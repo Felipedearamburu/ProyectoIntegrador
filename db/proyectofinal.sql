@@ -18,6 +18,8 @@
 --
 -- Table structure for table `Usuarios`
 --
+CREATE SCHEMA `tpprog2`
+
 
 DROP TABLE IF EXISTS `Usuarios`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
