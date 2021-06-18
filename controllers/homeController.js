@@ -6,8 +6,9 @@ module.exports = {
     index: (req, res)=>{
         db.Producto.findAll()
         .then(data => {
-            return res.send(data)
+             return res.send(data)
             return res.render('index', {title: 'NUESTROS PRODUCTOS' })
+        
 
         })
     }, 
