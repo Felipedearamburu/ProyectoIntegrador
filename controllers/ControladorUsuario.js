@@ -21,3 +21,17 @@ module.exports = {
   }
   
 }
+let controladorUsuario = {
+    registro: (req,res) => {
+        if ( req.session.usuarioIngresado != null){
+            return res.redirect("/")
+        } else{
+            return res.render("register")
+        }
+    },
+    
+
+
+
+
+}

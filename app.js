@@ -4,44 +4,66 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const session = require('express-session');
+const app = express();
 
-// Implementando session
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// routers controllers
 
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const productRouter = require('./routes/product');
 
+// Base de datos
+
+const db = require("./database/models")
 
 
+// session configurado
 
-const app = express();
+app.use(
+  session({
+      secret: "deluxecars",
+      resave: false,
+      saveUninitialized: true
+  })
+)
+
+// chequeo usuario logueado
+
+app.use(function(req, res, next) {
+
+  if (req.session.usuarioIngresado != null) {
+      res.locals = {
+          usuarioLogueado: req.session.usuarioIngresado
+      }
+
+  } else {
+      res.locals = {
+          usuarioLogueado: null
+      }
+  }
+
+  return next()
+})
+
+// cookies 
+app.use(cookieParser()),
+
+//middleware : ver si se guardan datos user
+
+app.use(function(req , res, next){
+  if (req.cookies.userId != undefined && req.session.usuarioIngresado === undefined){
+    db.Usuario.findByPk(req.cookies.usuario_id)
+
+    .then(user => {
+      req.session.usuarioIngresado = Usuario
+      next()
+    }
+      )
+  }
+}
+)
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -58,9 +80,9 @@ app.use('/users', usersRouter);
 app.use('/product', productRouter);
 
 
-// Llamo a la base de datos
-let db = require('./database/models');
+
 const { EWOULDBLOCK } = require('constants');
+const Usuario = require('./database/models/Usuario');
 
 
 
