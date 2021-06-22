@@ -16,6 +16,7 @@ const productRouter = require('./routes/product');
 // Base de datos
 
 const db = require("./database/models")
+const {user} = require('./database/models');
 
 
 // session configurado
@@ -52,16 +53,15 @@ app.use(cookieParser()),
 //middleware : ver si se guardan datos user
 
 app.use(function(req , res, next){
-  if (req.cookies.userId != undefined && req.session.usuarioIngresado === undefined){
-    db.Usuario.findByPk(req.cookies.usuario_id)
-
-    .then(user => {
-      req.session.usuarioIngresado = Usuario
+  if (req.session.usuario != undefined && req.session.usuario === undefined){
+    
+    res.locals.usuario = req.session.usuario;
+    
       next()
     }
-      )
+      
   }
-}
+
 )
 
 

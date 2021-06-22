@@ -1,3 +1,8 @@
+const db = require('../database/models');
+const bcrypt = require('bcrypt');
+
+
+
 module.exports = {
     register : (req, res) =>{
          res.render("register")
@@ -18,6 +23,9 @@ module.exports = {
   
   addproduct: (req,res)=>{
       res.render("productAdd")
+
+
+
   }
   
 }
@@ -29,7 +37,7 @@ let controladorUsuario = {
             return res.render("register")
         }
     },
-    
+
 
 
 

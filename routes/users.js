@@ -14,4 +14,5 @@ router.get('/profileEdit', controladorUsuario.profileEdit)
 router.get('/productAdd', controladorUsuario.addproduct)
 
 
+
 module.exports = router;
