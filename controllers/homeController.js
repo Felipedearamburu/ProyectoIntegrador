@@ -3,14 +3,20 @@ const db = require('../database/models')
 // const {where, Error} = require('sequelize')
 
 module.exports = {
-    index: (req, res)=>{
-        db.Producto.findAll()
-        .then(data => {
-             return res.send(data)
-            return res.render('index', {title: 'NUESTROS PRODUCTOS' })
+    index: (req, res)=>{ 
+
+        db.Producto.findAll() 
+        .then(data =>{
+            res.send(data)
+        })       
+        
+        
+       
         
 
-        })
+    
+
+        
     }, 
     detail: (req, res)=>{
         //let id = req.params.id;

@@ -16,7 +16,7 @@ const productRouter = require('./routes/product');
 // Base de datos
 
 const db = require("./database/models")
-const {user} = require('./database/models');
+
 
 
 // session configurado
@@ -59,9 +59,9 @@ app.use(function(req , res, next){
     
       next()
     }
-      
+  next()    
   }
-
+  
 )
 
 

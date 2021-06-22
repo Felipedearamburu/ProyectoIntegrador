@@ -11,10 +11,10 @@ module.exports = (sequelize,DataTypes)=>{
         texto: {
             type: DataTypes.TEXT
         },
-        usuarios_id : {
+        usuariosId : {
             type: DataTypes.INTEGER
         },
-        producto_id: {
+        productoId: {
             type: DataTypes.INTEGER,
         },
         createdAt: {
@@ -27,9 +27,9 @@ module.exports = (sequelize,DataTypes)=>{
     
     }
     let config = {
-        tableName: 'Comentario',
+        tableName: 'comentarios',
         timestamps: false,
-        underscored: true
+        underscored: false,
     }
     
     const Comentario = sequelize.define(alias, cols, config);

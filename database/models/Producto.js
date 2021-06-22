@@ -6,37 +6,44 @@ let cols = {
 
     id: {
         type: DataTypes.INTEGER,
-        autoIncrement: true,
+        autoIncrement: false,
         primaryKey: true
     },
-    nombreProducto: {
-        type: DataTypes.STRING,
-    },
+   
+   
     imagen: {
+        type: DataTypes.STRING
+    },
+    nombreProducto: {
         type: DataTypes.STRING
     },
     descripcion: {
         type: DataTypes.STRING,
     },
-    precio: {
-        type: DataTypes.INTEGER,
-    },
-    user_added: {
-        type: DataTypes.INTEGER,
-    },
     createdAt: {
         type: DataTypes.DATE,
     },
+   
+    userAdded: {
+        type: DataTypes.INTEGER,
+    },
+    
+    
+    
     updatedAt: {
         type: DataTypes.DATE,
+    },
+
+    precio: {
+        type: DataTypes.INTEGER
     }
 
 
 }
 let config = {
-    tableName: 'Producto',
+    tableName: 'productos',
     timestamps: false,
-    underscored: true
+    underscored: false,
 }
 
 const Producto = sequelize.define(alias, cols, config);
