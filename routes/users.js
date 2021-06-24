@@ -1,4 +1,5 @@
 var express = require('express');
+const ControladorUsuario = require('../controllers/controladorUsuario');
 var router = express.Router();
 
 
@@ -12,6 +13,8 @@ router.get('/login',  controladorUsuario.login)
 router.get('/profile', controladorUsuario.profile)
 router.get('/profileEdit', controladorUsuario.profileEdit)
 router.get('/productAdd', controladorUsuario.addproduct)
+router.post('/ingresar', controladorUsuario.ingresar)
+router.post('/store', controladorUsuario.store)
 
 
 

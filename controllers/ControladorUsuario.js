@@ -28,15 +28,22 @@ module.exports = {
   
   addproduct: (req,res)=>{
       res.render("productAdd")
-  }
+
+     
+
+  },
+   store: (req,res)=>{
+   let errores = [];
+    // if(req.body.nombre === ''){
+      //   errores.push('Este campo no puede estar vacio');
+   } 
+      
+      
+      
+
+      
+
+
   
-}
-let controladorUsuario = {
-    registro: (req,res) => {
-        if ( req.session.usuarioIngresado != null){
-            return res.redirect("/")
-        } else{
-            return res.render("register")
-        }
-    },
-}
+  
+};
