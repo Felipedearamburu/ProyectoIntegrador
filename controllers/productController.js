@@ -8,13 +8,13 @@ module.exports = {
         .then
     },
     detail: (req,res) => {
-        const productId = req.params.id;
-        db.Product.findByPk(productId, {
-//
-        })
-        .then(product => {
-            // return res.send(product);
-            return res.render('product', {product})
-        })
+//         const productId = req.params.id;
+//         db.Product.findByPk(productId, {
+// //
+//         })
+//         .then(product => {
+//             // return res.send(product);
+//             return res.render('product', {product})
+//         })
     },
 }
