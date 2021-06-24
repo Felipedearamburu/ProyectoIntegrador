@@ -32,8 +32,8 @@ module.exports = {
      
 
   },
-   store: (req,res)=>{
-   let errores = [];
+  // store: (req,res)=>{
+   //let errores = [];
     // if(req.body.nombre === ''){
       //   errores.push('Este campo no puede estar vacio');
    } 
@@ -46,4 +46,4 @@ module.exports = {
 
   
   
-};
+
