@@ -33,7 +33,7 @@ let autos = {
             nombre : "Mercedes Benz Clase C",
             precio : "3.200.000",
             imagen : "mercedes.jpeg",
-            descripcion : 'El Mercedes-Benz Clase C Es un automóvil de gama alta (automóvil de turismo del segmento D) producido por el fabricante alemán Mercedes-Benz desde el año 1993. Es el sucesor del Mercedes-Benz 190,.'
+            descripcion : 'El Mercedes-Benz Clase C Es un automóvil de gama alta (automóvil de turismo del segmento D) producido por el fabricante alemán Mercedes-Benz desde el año 1993. Es el sucesor del Mercedes-Benz 190.'
         },
         {
             id : 5,

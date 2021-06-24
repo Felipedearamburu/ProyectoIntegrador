@@ -23,9 +23,6 @@ module.exports = {
   
   addproduct: (req,res)=>{
       res.render("productAdd")
-
-
-
   }
   
 }
@@ -37,9 +34,4 @@ let controladorUsuario = {
             return res.render("register")
         }
     },
-
-
-
-
-
 }

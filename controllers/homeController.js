@@ -4,19 +4,10 @@ const db = require('../database/models')
 
 module.exports = {
     index: (req, res)=>{ 
-
         db.Producto.findAll() 
-        .then(data =>{
-            console.log(data)
-            res.render('index', {autos: data})
+        .then((data) =>{
+          res.render('index', {autos: data})
         })       
                 
-    }, 
-    detail: (req, res)=>{
-        db.Producto.findAll() 
-        .then(data =>{
-            console.log(data)
-            res.render('detail', {autos: data}, {autos: imagen})
-         })
-    }   
+    }
 }
