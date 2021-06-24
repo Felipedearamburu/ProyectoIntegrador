@@ -9,8 +9,13 @@ module.exports = {
         
     },
     login:(req, res)=> {
-        return res.render("login")
-        return res.send("Hola")
+        if(req.session.usuario === undefined){
+            return res.render('login');   
+        }else{
+            return res.redirect('/');
+        }
+
+        
     },
     profile:(req,res)=>{
         res.render("profile")
