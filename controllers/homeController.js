@@ -7,23 +7,16 @@ module.exports = {
 
         db.Producto.findAll() 
         .then(data =>{
-            res.send(data)
+            console.log(data)
+            res.render('index', {autos: data})
         })       
-        
-        
-       
-        
-
-    
-
-        
+                
     }, 
     detail: (req, res)=>{
-        //let id = req.params.id;
-        // for(let i = 0; i < autos.productos.length; i++){
-        //     if(autos.productos[i].id == id){
-        //         return res.render('detail', {auto : autos.productos[i]});
-        //     }
-        // }
-    }
+        db.Producto.findAll() 
+        .then(data =>{
+            console.log(data)
+            res.render('detail', {autos: data}, {autos: imagen})
+         })
+    }   
 }
