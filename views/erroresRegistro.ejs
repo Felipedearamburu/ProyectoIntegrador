@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+   <%-include ('./partials/head.ejs') 
+<body>
+    <div class = "container products-wrapper">
+<h1>Errores en el formulario de registro</h1>
+<div class = "row">
+
+
+<ul>
+    <%for(let i = 0; i < errors.length; i++){ %>
+        <li class="alert alert-danger"><%= errors[i]%></li>
+    <%}%>    
+</ul>
+
+
+</div>
+
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+</body>
+</html>
