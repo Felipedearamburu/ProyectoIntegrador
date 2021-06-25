@@ -52,6 +52,18 @@
                 <li>
                     <a href="/users/login">Ingresá <i class="fas fa-sign-in-alt"></i></a>
                 </li>
+               
+                <% if(locals.Usuario){ %>
+                    <% if(locals.Usuario.role == 9){%>
+                        <li ><a  href="/productAdd">Administrador <i class="far fa-address-card"></i></a>
+                        </li>
+                    <% } %>
+                  <% } %>  
+                </ul>
+               
+               
+               
+               
             </ul>
         </nav>
     </div>
