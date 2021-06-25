@@ -8,6 +8,21 @@ module.exports = {
          res.render("register")
         
     },
+    ingresar : (req, res) =>{
+        return res.send(req.body)
+        db.Usuario.create({
+            nombre : req.body.nombre,
+            email : req.body.email,
+            password : bcrypjs.hashSync(req.body.password, 10),
+            //imgUsuario: req.file ? req.file.filename : '',
+            role : 1
+        })
+        .then(()=>{
+            return res.redirect('/users/login');
+        })     
+        .catch(error => console.log(error));
+
+    },
     login:(req, res)=> {
         if(req.session.usuario === undefined){
             return res.render('login');   

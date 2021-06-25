@@ -18,7 +18,7 @@
 			</div>
 			<!-- Show the "ultimos" products -->
 
-				<form action="login.ejs" method="POST" class="formulario"> 
+				<form action="/users/store" method="POST" class="formulario"> 
 					<div class="NombreYApellido">
 						<input type="text" class="form-control" placeholder="Nombre y Apellido" name="nombreapellido" id="Apellido">
 
@@ -33,21 +33,21 @@
 					</div>
 					<div>
 
-						<input type="password" class="form-control" placeholder="contraseña" name="contraseña" id='password'>
+						<input type="password" class="form-control" placeholder="contraseña" name="password" id='password'>
 
 					</div>	
 					<div>
 						<input type="date" class="form-control" placeholder="Fecha de nacimiento" name="nacimiento" id="birth">
 					</div>
 					<div>
-						<script>
+						<!--<script>
 							function alerta(){
 								alert("¡Felicidades, te registraste exitosamente!");
 							}
-						</script>
-						<a href="/users/profile" class="boton">
-							<input class="btn btn btn-info" type="button" onclick="alerta()" value="Registrarse">
-						</a>
+						</script>-->
+						
+							<input class="btn btn btn-info" type="submit"  value="Registrarse">
+						
 					</div>
 
 				</form>
