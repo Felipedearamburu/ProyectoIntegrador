@@ -12,7 +12,6 @@ router.post('/store', controladorUsuario.ingresar)
 router.get('/login',  controladorUsuario.login)
 router.get('/profile', controladorUsuario.profile)
 router.get('/profileEdit', controladorUsuario.profileEdit)
-router.get('/productAdd', controladorUsuario.addproduct)
 router.post('/store', controladorUsuario.ingresar)
 
 

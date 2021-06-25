@@ -17,30 +17,32 @@
 						<h2 class="products-title">Agregá el producto que desees </h2>
 					</div>
 					
-						<form class="font-impact-white" action="/profile" method="GET">
+						<form class="font-impact-white" action="/product/store" method="POST">
 		
 							<p>
 							<label for="nombre"> Nombre del producto: </label>
-							<input type="text" name="nombre" id="nombre">
+							<input type="text" name="nombre" id="nombre" required>
 							</p>
 		
 							<p>
 							<label for="imagen"> Imagen: </label>
-							<input type="file" name="imagen" id="imagen">
+							<input type="file" name="imagen" id="imagen" required>
 							</p>
 							<p>
 								<label for="precio"> Precio : $</label>
-								<input type="number" name="precio" id="precio">
+								<input type="number" name="precio" id="precio" required>
 							</p>
 							<p>
-							<label for="descripción"> Descripcion: </label>
-							<input type="text" name="descripción" id="descripción">
+							<label for="description"> Descripción: </label>
+							<input type="text" name="description" id="description" required>
 							</p>
 		
 							<p>
 								<button class="button-orange" type="submit" value="Enviar"> Agregar producto </button>
 							</p>
-			
+							<div>
+								<a href="/users/profile" class= "btn btn-primary">Volver</a>
+							</div>
 			
 						</form>
 		

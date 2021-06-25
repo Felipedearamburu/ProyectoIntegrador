@@ -6,7 +6,7 @@ let cols = {
 
     id: {
         type: DataTypes.INTEGER,
-        autoIncrement: false,
+        autoIncrement: true,
         primaryKey: true
     },
    
