@@ -24,7 +24,7 @@ module.exports = {
 
     },
     login:(req, res)=> {
-        if(req.session.usuario === undefined){
+        if(req.session.Usuario === undefined){
             return res.render('login');   
         }else{
             return res.redirect('/');

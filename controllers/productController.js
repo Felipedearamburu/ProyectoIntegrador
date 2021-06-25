@@ -17,4 +17,17 @@ module.exports = {
 //             return res.render('product', {product})
 //         })
     },
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+    
 }
