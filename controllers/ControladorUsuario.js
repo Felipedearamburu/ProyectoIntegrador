@@ -48,13 +48,16 @@ module.exports = {
      
 
   },
+  create: (req,res) => {
+    res.render('register')
+  },
+
   store: (req,res)=>{
-    store: (req,res) => {
         let usuarios= {
             nombre: req.body.nombre,
             Email: req.body.email,
             password: req.body.password,
-            telefono: req.body.telefono,
+            telefono: req.body.numero,
             role: 1,
             FechaDeNacimiento: req.body.nacimiento,
             createdAt: currentDate,
@@ -72,13 +75,4 @@ module.exports = {
 
 
 }
-}
-
-    
-      
-      
-
-      
-
-
 }

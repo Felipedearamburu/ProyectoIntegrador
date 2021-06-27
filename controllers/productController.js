@@ -14,7 +14,7 @@ module.exports = {
     store: (req,res) => {
     let productos = {
         nombreProducto: req.body.nombre,
-        imagen: req.body.imagen,
+        imagen: req.file ? req.file.filename : '',
         precio: req.body.precio,
         descripcion: req.body.description,
         userAdded: 1,
@@ -62,6 +62,25 @@ module.exports = {
 //             return res.render('product', {product})
 //         })
     },
+    delete: (req,res) => {
+        let id = req.params.id;
+        db.Producto.findByPk(id)
+        .then(Producto => {
+            return res.render('productoDelete', {productos})
+        })
+        .catch(error=> console.log(error))
+    },
+    destroy: (req,res) => {
+        let productoId = req.params.id;
+        db.Producto.destroy({
+            where: {
+                id : productoId
+            }
+        })
+        .then(() => {
+            return res.redirect('/')
+        })
+    }
 
     
     
