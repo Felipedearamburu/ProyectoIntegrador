@@ -52,7 +52,6 @@ module.exports = {
     store: (req,res) => {
         let usuarios= {
             nombre: req.body.nombre,
-            email: req.body.email,
             password: req.body.password,
             telefono: req.body.telefono,
             role: 1,
