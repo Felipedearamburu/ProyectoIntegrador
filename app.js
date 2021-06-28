@@ -32,14 +32,14 @@ app.use(
 
 app.use(function(req, res, next) {
 
-  if (req.session.usuarioLogueado != null) {
+  if (req.session.user != null) {
       res.locals = {
-          usuarioLogueado: req.session.usuario
+          user: req.session.user
       }
 
   } else {
       res.locals = {
-          usuarioLogueado: null
+          user: null
       }
   }
 
