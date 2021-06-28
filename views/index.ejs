@@ -11,7 +11,9 @@
 	<!-- /Banner -->
   <body>
     <h1 class= "nuestros-productos" style="text-align: center;">NUESTROS PRODUCTOS</h1>
-  
+  <% if(locals.user){ %>
+<h5>Bienvenido: <%= locals.usuario.nombre %></h5>
+<% }%>
 	<div class="container products-wrapper">
       	<div class="row">
           <% for (let i=0; i<autos.length; i ++){ %>

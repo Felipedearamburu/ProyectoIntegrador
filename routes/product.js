@@ -27,5 +27,5 @@ router.get('/create', productController.create);
 router.post('/store', productController.store);
 router.get('/productoDelete/:id', productController.delete);
 router.post('/delete/:id', productController.destroy);
-
+router.get('/edit/:id', productController.edit);
 module.exports = router;

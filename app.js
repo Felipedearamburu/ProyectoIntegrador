@@ -33,14 +33,14 @@ app.use(
 
 app.use(function(req, res, next) {
 
-  if (req.session.usuarioIngresado != null) {
+  if (req.session.usuario != null) {
       res.locals = {
-          usuarioLogueado: req.session.usuarioIngresado
+          usuarioLogueado: req.session.usuario
       }
 
   } else {
       res.locals = {
-          usuarioLogueado: null
+          usuario: null
       }
   }
 
@@ -50,13 +50,13 @@ app.use(function(req, res, next) {
 // cookies 
 app.use(cookieParser()),
 
-//middleware : ver si se guardan datos user
+//middleware : ver si hay alguien logueado o no
 
 app.use(function(req , res, next){
-  if (req.session.usuario != undefined && req.session.usuario === undefined){
+  if (req.session.usuario != undefined) {
     
-    res.locals.usuario = req.session.usuario;
-    
+    res.locals = req.session.usuario;
+  
       next()
     }
   next()    

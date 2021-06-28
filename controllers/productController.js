@@ -11,6 +11,17 @@ module.exports = {
     res.render('productAdd')
 
     },
+
+    edit: (req,res) => {
+        let autoId = req.params.id;
+        let promAutos = db.Producto.findByPk(id);
+        
+        Promise
+        .all([promAutos])
+        .then(([Producto]) => {
+            return res.render('editProduct', {autos})})
+        .catch(error => res.send(error))
+    },
     store: (req,res) => {
     let productos = {
         nombreProducto: req.body.nombre,
