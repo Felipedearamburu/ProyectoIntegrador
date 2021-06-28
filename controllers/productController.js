@@ -84,27 +84,6 @@ module.exports = {
         .then(() => {
             return res.redirect('/')
         })
-    },
-    comentar: (req,res) => {
-        productoId = req.body.producto_id;
-        let errores = [];
-        if(req.body.comentario === ''){
-            errores.push('El campo comentario no puede estar vacío');
-        }
-        if(errores.length === 0){
-            db.Comment.create({
-                nombre: req.body.producto_id,
-                usuariosId: req.body.usuario_id,
-                texto: req.body.comentario,
-                createdAt: req.body.fechaDeCreacion
-            })
-            .then(() => {
-                return res.redirect('/products/detail/' + productoId);
-            })
-            .catch(error => console.log(error));
-        } else {
-            return res.render('errorComentario', {errores});
-        }
     }
 
     

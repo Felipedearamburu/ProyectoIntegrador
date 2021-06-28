@@ -29,33 +29,69 @@
                             <p class="product-detail-description"><%= autos.descripcion %> </p>
                         </article>
                         <div class="col-12 col-lg-4">
-                            <div class="col-12 col-lg-4">
-                                <section class="comments">
-                                    <article>
-                                        <h2 class="comentario-titulo">Comentarios:</h2>
-                                        <% for(let i=0; i< autos.comentarios.length; i++){ %>
-                                        <img src="/images/users/" alt="userIcon">
-                                        <div class="data">
-                                            <p class="user">
-                                            <strong> <a class= "editar link" href="/users/profile/<%= productos.comentarios[i].usuarios.id %> "> <%= productos.comments[i].usuarios.nombre %> </a> </strong>
-                                            <%= productos.comentario[i].comentarios%></p>
-                                        </div>
-                                        <% } %>
-                                    </article>
-                                </section>
-                                <% if(locals.user){ %>
-                                <form class="form" action="/products/comentar" method="POST">
-                                    <input class="form-input" type="text" value="" placeholder="Agregar comentario" name="comentario">
-                                    <label for="fechaDeCreacion">Fecha:</label><input type="date" name="fechaDeCreacion">
-                                    <input type="hidden" name="usuario_id" value="<%= locals.user.id %>">
-                                    <input type="hidden" name="producto_id" value="<%= productos.id %>">
-                                    <button type="submit" class="buy-now-button link">AGREGAR COMENTARIO</button>
-                                </form>
-                                <hr>
-                                <% } else { %>
-                                    <a class="buy-now-button link" href="/users/login">AGREGAR COMENTARIO</a>
-                                <% } %> 
-                            </div>
+                            <section class="comments">
+                                <article>
+                                    <img src="/images/users/felipe.jpeg" alt="userIcon">
+                                    <div class="data">
+                                        <p class="user">
+                                        <strong> <a href="/">Felipe de Aramburu: </a> </strong>
+                                        Solo algunos pueden acceder a estos lujos</p>
+                                    </div>
+                                </article>
+                                <article>
+                                    <img src="/images/users/Diogi.jpeg" alt="userIcon">
+                                    <div class="data">
+                                        <p class="user">
+                                            <strong> <a href="/">Diógenes Blaquier: </a> </strong>
+                                            Que lujo! Mi próxima compra
+                                        </p>
+                                    </div>
+                                </article>
+                                <article>
+                                    <img src="/images/users/dani.jpeg" alt="userIcon">
+                                    <div class="data">
+                                        <p class="user">
+                                            <strong> <a href="/">Dani Fuentes: </a> </strong>
+                                            Se ve bien, claro como el día
+                                        </p>
+                                    </div>
+                                </article>
+                                <article>
+                                    <img src="/images/users/Maca.jpeg" alt="userIcon">
+                                    <div class="data">
+                                        <p class="user">
+                                            <strong> <a href="/">Maca Armijo: </a> </strong>
+                                            Que buen auto! ¿Hay algun descuento con LaNacion?
+                                        </p>
+                                    </div>
+                                </article>
+                                <article>
+                                    <img src="/images/users/lorenzo.jpeg" alt="userIcon">
+                                    <div class="data">
+                                        <p class="user">
+                                            <strong> <a href="/">Lorenzo Fallik: </a> </strong>
+                                            El auto de mis sueños
+                                        </p>
+                                    </div>
+                                </article>
+                                <article>
+                                    <img src="/images/users/dani.jpeg" alt="userIcon">
+                                    <div class="data">
+                                        <p class="user">
+                                            <strong> <a href="/">Dani Fuentes: </a> </strong>
+                                            Gran catálogo chicos! Los felicito y vamos por más!
+                                        </p>
+                                    </div>
+                                </article>
+        
+        
+                            </section>
+                            <form class="form" action="" method="POST">
+                                <input class="form-input" type="text" value="" placeholder="Agregar comentario">
+                                <button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
+                            </form>
+                            <hr>
+                        </div>
                     </div>
                 </div>
             </div>
