@@ -54,10 +54,12 @@
                     <a href="/login">Ingresá <i class="fas fa-sign-in-alt"></i></a>
                 </li>
                
-                <% if(locals.Usuario){ %>
-                    <% if(locals.Usuario.role === 9){%>
-                        <li ><a  href="/productAdd">Administrador <i class="far fa-address-card"></i></a>
-                        </li>
+              
+              
+                <% if(locals.user){ %>
+                    <% if(locals.user.role == 9){%>
+                        <li ><a   href="/users/admin">Administrador </a></li>
+                        <li><a href="/users/logout">Cerrar sesion </a></li>
                     <% } %>
                   <% } %>  
                 </ul>

@@ -57,7 +57,19 @@ module.exports = {
        
        
 },
+logout: (req,res) =>{
+    req.session.destroy();
+    res.cookie('userId', '', {maxAge : -1 });
+    return res.redirect('/');
+},
 admin : (req, res) =>{
-    res.render("adminProducto")}
+    res.render("adminProducto")},
+
+
+   
+   
+   
+   
+   
 
 }
