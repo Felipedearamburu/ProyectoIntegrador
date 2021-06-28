@@ -25,6 +25,8 @@ router.get('/detail/:id', productController.detail);
 router.post('/product/borrar/:id', productController.destroy);
 router.get('/create', productController.create);
 router.post('/store', upload.single('imagen'), productController.store);
+router.post('/comentar', productController.comentar);
+
 
 
 module.exports = router;
