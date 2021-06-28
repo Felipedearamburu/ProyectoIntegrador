@@ -54,6 +54,10 @@ module.exports = {
         }
         )
 
+       
+       
+},
+admin : (req, res) =>{
+    res.render("adminProducto")}
 
-}
 }

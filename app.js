@@ -28,40 +28,35 @@ app.use(
   })
 )
 
-// chequeo usuario logueado
+// chequeo usuario logueado: Middleware
 
 app.use(function(req, res, next) {
 
-  if (req.session.usuario != null) {
+  if (req.session.usuarioLogueado != null) {
       res.locals = {
           usuarioLogueado: req.session.usuario
       }
 
   } else {
       res.locals = {
-          usuario: null
+          usuarioLogueado: null
       }
   }
 
   return next()
 })
 
-// cookies 
+// implementamos cookies
 app.use(cookieParser()),
 
-//middleware : ver si hay alguien logueado o no
 
-app.use(function(req , res, next){
-  if (req.session.usuario != undefined) {
-    
-    res.locals = req.session.usuario;
-  
-      next()
-    }
-  next()    
-  }
-  
-)
+
+
+
+
+
+
+
 
 
 // view engine setup
@@ -78,6 +73,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/product', productRouter);
+
 
 
 const { EWOULDBLOCK } = require('constants');
