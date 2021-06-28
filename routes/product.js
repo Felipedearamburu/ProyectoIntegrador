@@ -13,19 +13,18 @@ var storage = multer.diskStorage({
     },
 
     filename: (req, file, cb) => {
-        //Ver UniqueID
         cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname))
 
     }
 })
 
-var upload = multer({ storage });
+var upload = multer({ storage : storage });
 
 router.get('/', productController.index);
 router.get('/detail/:id', productController.detail);
+router.post('/product/borrar/:id', productController.destroy);
 router.get('/create', productController.create);
-router.post('/store', productController.store);
-router.get('/productoDelete/:id', productController.delete);
-router.post('/delete/:id', productController.destroy);
-router.get('/edit/:id', productController.edit);
+router.post('/store', upload.single('imagen'), productController.store);
+
+
 module.exports = router;

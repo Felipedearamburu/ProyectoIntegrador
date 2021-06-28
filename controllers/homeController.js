@@ -18,5 +18,5 @@ module.exports = {
             console.log(data)
             res.render('detail', {autos: data})
          })
-    }   
+    }
 }

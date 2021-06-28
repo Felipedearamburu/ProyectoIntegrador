@@ -33,9 +33,13 @@ module.exports = {
 
         
     },
-    profile:(req,res)=>{
-        res.render("profile")
-    },
+    profile: (req, res)=>{ 
+        db.Producto.findAll() 
+        .then(data =>{
+            res.render('profile', {autos: data})
+        })       
+                
+    }, 
 
    profileEdit: (req,res)=>{
        return res.render('profileEdit')
