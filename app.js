@@ -12,7 +12,6 @@ const app = express();
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const productRouter = require('./routes/product');
-
 // Base de datos
 
 const db = require("./database/models")
@@ -75,10 +74,10 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/product', productRouter);
-
 
 
 const { EWOULDBLOCK } = require('constants');

@@ -9,30 +9,6 @@ module.exports = {
          res.render("register")
         
     },
-    ingresar : (req, res) =>{
-        return res.send(req.body)
-        db.Usuario.create({
-            nombre : req.body.nombre,
-            email : req.body.email,
-            password : bcrypjs.hashSync(req.body.password, 10),
-            //imgUsuario: req.file ? req.file.filename : '',
-            role : 1
-        })
-        .then(()=>{
-            return res.redirect('/users/login');
-        })     
-        .catch(error => console.log(error));
-
-    },
-    login:(req, res)=> {
-        if(req.session.Usuario === undefined){
-            return res.render('login');   
-        }else{
-            return res.redirect('/');
-        }
-
-        
-    },
     profile: (req, res)=>{ 
         db.Producto.findAll() 
         .then(data =>{
@@ -62,6 +38,7 @@ module.exports = {
             Email: req.body.email,
             password: req.body.password,
             telefono: req.body.numero,
+            email: req.body.email,
             role: 1,
             FechaDeNacimiento: req.body.nacimiento,
             createdAt: currentDate,
