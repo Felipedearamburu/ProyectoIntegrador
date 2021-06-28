@@ -8,7 +8,7 @@
 
 <body>
     <%- include('./partials/header') %>
-    		
+    		<% console.log(autos)%>
 			<div class="container products-wrapper">
                 <div class="d-flex align-items-center">
                     <h2 class="products-title"><%= autos.nombreProducto %> </h2> 
@@ -16,12 +16,15 @@
                         <a href="/users/productAdd">Editar</a>
                     </p>
                     <a href="/" class= "btn btn-primary">Volver</a>
+                    <form action="/product/borrar/<%=autos.id%>" method="post">
+                        <button>Borrar</button>
+                    </form>
 
                 </div>
                 <div class="product-detail">
                     <div class="row">
                         <article class="col-12 col-lg-8 product-detail-info">
-                            <img src="/autosImg/<%= autos.imagen %> " alt="">
+                            <img src="/images/productos/<%= autos.imagen %> " alt="">
                             <p class="product-detail-price">Precio : $ <%= autos.precio %></p>
                             <p class="product-detail-description"><%= autos.descripcion %> </p>
                         </article>

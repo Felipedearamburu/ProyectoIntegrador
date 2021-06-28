@@ -62,14 +62,7 @@ module.exports = {
 //             return res.render('product', {product})
 //         })
     },
-    delete: (req,res) => {
-        let id = req.params.id;
-        db.Producto.findByPk(id)
-        .then(Producto => {
-            return res.render('productoDelete', {productos})
-        })
-        .catch(error=> console.log(error))
-    },
+
     destroy: (req,res) => {
         let productoId = req.params.id;
         db.Producto.destroy({
