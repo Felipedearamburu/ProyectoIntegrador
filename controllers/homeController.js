@@ -7,7 +7,7 @@ module.exports = {
 
         db.Producto.findAll() 
         .then(data =>{
-            res.render('index', {autos: data})
+            res.render('index', {Producto: data})
         })       
                 
     }, 
