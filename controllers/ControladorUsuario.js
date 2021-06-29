@@ -33,7 +33,20 @@ module.exports = {
   },
 
   store: (req,res)=>{
-        let usuarios= {
+    let errores = [];
+    if(req.body.nombre === ''){
+        errores.push('El campo nombre no puede estar vacio');
+    }
+    if(req.body.email === ''){
+        errores.push('El campo email no puede estar vacio');
+    }
+    if(req.body.password === ''){
+        errores.push('El campo password no puede estar vacio');
+    }
+    
+    if(errores.length === 0){
+    
+    let usuarios= {
             nombre: req.body.nombre,
             Email: req.body.email,
             password: req.body.password,
@@ -53,7 +66,7 @@ module.exports = {
             return res.send(error)
         }
         )
-
+    }
        
        
 },
