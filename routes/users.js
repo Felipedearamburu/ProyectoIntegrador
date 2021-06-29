@@ -11,7 +11,6 @@ router.get('/register', controladorUsuario.register)
 //router.post('/store', controladorUsuario.ingresar)
 router.get('/profile', controladorUsuario.profile)
 router.get('/profileEdit', controladorUsuario.profileEdit)
-//router.post('/store', controladorUsuario.ingresar)
 router.get('/create', controladorUsuario.create)
 router.post('/store', controladorUsuario.store);
 router.get('/admin' , controladorUsuario.admin);
