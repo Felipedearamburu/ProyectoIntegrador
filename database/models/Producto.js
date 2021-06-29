@@ -47,6 +47,16 @@ let config = {
 }
 
 const Producto = sequelize.define(alias, cols, config);
+Producto.associate = function(models){
+    Producto.belongsTo(models.Usuario, {
+        as : 'productos',
+        foreignKey: 'usuario_id' 
+    }),
+    Producto.hasMany(models.Comentario,{
+        as: 'comentarios',
+        foreignKey: 'product_id'
+    })
+}
 
 return Producto;
 }

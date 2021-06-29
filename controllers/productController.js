@@ -84,7 +84,27 @@ module.exports = {
         .then(() => {
             return res.redirect('/')
         })
-    }
+    },
+    /*comentar: (req,res) => {
+        productoId = req.body.productId;
+        let errores = [];
+        if(req.body.comentarios === ''){
+            errores.push('El campo comentario no puede estar vacío');
+        }
+        if(errores.length === 0){
+            db.Comentario.create({
+                product_id: req.body.producto_id,
+                usuario_id: req.body.usuario_id,
+                texto: req.body.comentario
+            })
+            .then(() => {
+                return res.redirect('/product/detail/' + productoId);
+            })
+            .catch(error => console.log(error));
+        } else {
+            return res.render('errorComentario', {errores});
+        }
+    }*/
 
     
     
