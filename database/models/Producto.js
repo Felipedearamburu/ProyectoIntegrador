@@ -28,8 +28,7 @@ let cols = {
         type: DataTypes.INTEGER,
     },
     
-    
-    
+
     updatedAt: {
         type: DataTypes.DATE,
     },

@@ -43,25 +43,7 @@ module.exports = {
     }
     )
 
-
-
-
-
-
-
     },
-
-
-
-
-
-
-
-
-
-
-
-
 
     detail: (req,res) => {
 //         const productId = req.params.id;
